@@ -1,0 +1,14 @@
+[toolchain]
+anchor_version = "0.30.1"
+solana_version = "1.18.17"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.localnet]
+pump = "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P"
+
+[provider]
+cluster = "Localnet"
+wallet = "~/.config/solana/id.json"

@@ -1,0 +1,10 @@
+.anchor
+.DS_Store
+**/*.rs.bk
+node_modules
+test-ledger
+.yarn
+
+target/*
+!target/types
+!target/idl
