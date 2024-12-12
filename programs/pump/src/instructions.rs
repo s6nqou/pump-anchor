@@ -1,4 +1,4 @@
-use crate::states::Global;
+use crate::states::{BondingCurve, Global};
 use anchor_lang::prelude::*;
 use anchor_spl::{
     associated_token::AssociatedToken,
@@ -54,7 +54,7 @@ pub struct Create<'info> {
         seeds = [SEED_BONDING_CURVE, &mint.key().to_bytes()],
         bump,
     )]
-    pub bonding_curve: SystemAccount<'info>,
+    pub bonding_curve: Account<'info, BondingCurve>,
 
     #[account(
         mut,
@@ -117,7 +117,7 @@ pub struct Buy<'info> {
         seeds = [SEED_BONDING_CURVE, &mint.key().to_bytes()],
         bump,
     )]
-    pub bonding_curve: SystemAccount<'info>,
+    pub bonding_curve: Account<'info, BondingCurve>,
 
     #[account(
         mut,
@@ -161,7 +161,7 @@ pub struct Sell<'info> {
         seeds = [SEED_BONDING_CURVE, &mint.key().to_bytes()],
         bump,
     )]
-    pub bonding_curve: SystemAccount<'info>,
+    pub bonding_curve: Account<'info, BondingCurve>,
 
     #[account(
         mut,
@@ -199,7 +199,7 @@ pub struct Withdraw<'info> {
         seeds = [SEED_BONDING_CURVE, &mint.key().to_bytes()],
         bump,
     )]
-    pub bonding_curve: SystemAccount<'info>,
+    pub bonding_curve: Account<'info, BondingCurve>,
 
     #[account(
         mut,

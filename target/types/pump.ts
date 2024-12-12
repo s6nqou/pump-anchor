@@ -1070,6 +1070,19 @@ export type Pump = {
   ],
   "accounts": [
     {
+      "name": "bondingCurve",
+      "discriminator": [
+        23,
+        183,
+        248,
+        55,
+        96,
+        216,
+        172,
+        96
+      ]
+    },
+    {
       "name": "global",
       "discriminator": [
         167,
@@ -1180,6 +1193,38 @@ export type Pump = {
     }
   ],
   "types": [
+    {
+      "name": "bondingCurve",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "virtualTokenReserves",
+            "type": "u64"
+          },
+          {
+            "name": "virtualSolReserves",
+            "type": "u64"
+          },
+          {
+            "name": "realTokenReserves",
+            "type": "u64"
+          },
+          {
+            "name": "realSolReserves",
+            "type": "u64"
+          },
+          {
+            "name": "tokenTotalSuply",
+            "type": "u64"
+          },
+          {
+            "name": "complete",
+            "type": "bool"
+          }
+        ]
+      }
+    },
     {
       "name": "completeEvent",
       "type": {

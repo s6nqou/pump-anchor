@@ -1064,6 +1064,19 @@
   ],
   "accounts": [
     {
+      "name": "BondingCurve",
+      "discriminator": [
+        23,
+        183,
+        248,
+        55,
+        96,
+        216,
+        172,
+        96
+      ]
+    },
+    {
       "name": "Global",
       "discriminator": [
         167,
@@ -1174,6 +1187,38 @@
     }
   ],
   "types": [
+    {
+      "name": "BondingCurve",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "virtual_token_reserves",
+            "type": "u64"
+          },
+          {
+            "name": "virtual_sol_reserves",
+            "type": "u64"
+          },
+          {
+            "name": "real_token_reserves",
+            "type": "u64"
+          },
+          {
+            "name": "real_sol_reserves",
+            "type": "u64"
+          },
+          {
+            "name": "token_total_suply",
+            "type": "u64"
+          },
+          {
+            "name": "complete",
+            "type": "bool"
+          }
+        ]
+      }
+    },
     {
       "name": "CompleteEvent",
       "type": {
