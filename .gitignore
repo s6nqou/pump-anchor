@@ -5,6 +5,8 @@ node_modules
 test-ledger
 .yarn
 
+package-lock.json
+
 target/*
 !target/types
 !target/idl

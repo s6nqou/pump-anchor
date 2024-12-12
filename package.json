@@ -1,0 +1,42 @@
+{
+  "name": "pump-anchor-idl",
+  "version": "1.0.0",
+  "description": "Pump.fun Anchor IDL & types",
+  "author": "s6nqou",
+  "keywords": [
+    "pump",
+    "pump.fun",
+    "idl",
+    "solana",
+    "anchor",
+    "web3",
+    "crypto",
+    "blockchain",
+    "defi"
+  ],
+  "type": "module",
+  "main": "lib/index.cjs",
+  "types": "lib/index.d.ts",
+  "exports": {
+    "import": "./lib/index.js",
+    "require": "./lib/index.cjs"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "homepage": "https://github.com/s6nqou/pump-anchor#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s6nqou/pump-anchor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/s6nqou/pump-anchor/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "/lib",
+    "/target"
+  ],
+  "license": "MIT"
+}
