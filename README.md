@@ -1,5 +1,7 @@
 # ![pump](https://github.com/user-attachments/assets/8ae7878a-d0de-4013-b96e-747627041fed) Pump.fun Anchor SDK
 
+[![NPM Version](https://img.shields.io/npm/v/pump-anchor-idl)](https://www.npmjs.com/package/pump-anchor-idl)
+
 An unofficial [Pump.fun](https://pump.fun/) Solana program SDK written in Rust and [Anchor](https://www.anchor-lang.com/).
 
 ## Features
@@ -12,16 +14,19 @@ An unofficial [Pump.fun](https://pump.fun/) Solana program SDK written in Rust a
 
 ### Typescript Client
 
-Download [IDL json file](target/idl/pump.json) and [type definition file](target/types/pump.ts) to your project.
+Install npm package `pump-anchor-idl`:
+
+```bash
+npm install --save pump-anchor-idl
+```
 
 #### Example
 
 ```typescript
 import { Program } from "@coral-xyz/anchor";
-import idl from "./pump.json";
-import type { Pump } from "./pump";
+import idl from "pump-anchor-idl";
 
-const pumpProgram = new Program(idl as Pump, anchorProvider);
+const pumpProgram = new Program(idl, anchorProvider);
 
 const FEE_RECIPIENT_ADDRESS = new PublicKey(
   "CebN5WGQ4jvEPvsVU4EoHEpgzq1VV7AbicfhtW4xC9iM"
@@ -33,11 +38,11 @@ async function pumpBuy(wallet: Keypair, mint: PublicKey, amount: BN, maxSolCost:
     wallet.publicKey,
     tokenAccount,
     wallet.publicKey,
-    mint
+    mint,
   );
 
   return await pumpProgram.methods
-    .buy(amountOut, amount)
+    .buy(amount, maxSolCost)
     .accounts({
       mint,
       associatedUser: tokenAccount,
@@ -45,14 +50,14 @@ async function pumpBuy(wallet: Keypair, mint: PublicKey, amount: BN, maxSolCost:
       program: pumpProgram.programId,
     })
     .preInstructions([createTokenAccountInstruction])
-    .signers([config.keypair])
+    .signers([wallet])
     .rpc();
 }
 ```
 
 ### Rust Client or On-chain Program
 
-Add dependencies in `Cargo.toml`.
+Add dependencies in `Cargo.toml`:
 
 ```toml
 [dependencies]
