@@ -6,9 +6,14 @@ An unofficial [Pump.fun](https://pump.fun/) Solana program SDK written in Rust a
 
 ## Features
 
-- Typescript Anchor IDL for building pump transactions with code completion and minimum account inputs required.
-- Rust API for building pump transactions with structured accounts and arguments.
-- Rust CPI methods for building your own on-chain program on top of pump.
+- Typescript Anchor IDL
+  - building pump transactions with code completion and minimum account inputs required
+  - fetching and parsing accounts data like `global` accounts and `bonding_curve` accounts
+  - listening to on-chain pump events for observing new pump creations, pump swaps, etc.
+
+- Rust API
+  - building your own on-chain program on top of pump via CPI methods
+  - building pump transactions with structured accounts and arguments
 
 ## Usage
 
